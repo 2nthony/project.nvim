@@ -109,6 +109,7 @@ local function projects(opts)
 
         local on_project_selected = function()
           change_working_directory(prompt_bufnr)
+          pcall(config.options.on_changed)
         end
         actions.select_default:replace(on_project_selected)
         return true
