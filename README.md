@@ -3,6 +3,7 @@
 - remove all keymaps but `d`, `<c-d>`.
 - change `enter` to change working directory.
 - add `options.on_changed` callback, you can use your session manager to restore sessions on this callback.
+- no other options breaks.
 
 ---
 
