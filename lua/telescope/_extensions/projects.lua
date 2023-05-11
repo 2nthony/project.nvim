@@ -11,7 +11,6 @@ local pickers = require("telescope.pickers")
 local telescope_config = require("telescope.config").values
 local actions = require("telescope.actions")
 local state = require("telescope.actions.state")
-local builtin = require("telescope.builtin")
 local entry_display = require("telescope.pickers.entry_display")
 
 local history = require("project_nvim.utils.history")
@@ -73,18 +72,6 @@ local function change_working_directory(prompt_bufnr, prompt)
   end
   local cd_successful = project.set_pwd(project_path, "telescope")
   return project_path, cd_successful
-end
-
-local function find_project_files(prompt_bufnr)
-  local project_path, cd_successful = change_working_directory(prompt_bufnr, true)
-  local opt = {
-    cwd = project_path,
-    hidden = config.options.show_hidden,
-    mode = "insert",
-  }
-  if cd_successful then
-    builtin.find_files(opt)
-  end
 end
 
 local function delete_project(prompt_bufnr)
