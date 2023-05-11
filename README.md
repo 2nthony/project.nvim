@@ -1,3 +1,10 @@
+### Quick view for this fork
+
+- remove all keymaps but `d`, `<c-d>`.
+- add `options.on_changed` callback, you can use your session manager to restore sessions on this callback.
+
+---
+
 # 🗃️ project.nvim
 
 **project.nvim** is an all in one neovim plugin written in lua that provides
@@ -124,6 +131,9 @@ use {
   -- Path where project.nvim will store the project history for use in
   -- telescope
   datapath = vim.fn.stdpath("data"),
+
+  -- on working directory changed
+  on_changed = nil,
 }
 ```
 
@@ -190,12 +200,8 @@ require'telescope'.extensions.projects.projects{}
 
 | Normal mode | Insert mode | Action                     |
 | ----------- | ----------- | -------------------------- |
-| f           | \<c-f\>     | find\_project\_files       |
-| b           | \<c-b\>     | browse\_project\_files     |
 | d           | \<c-d\>     | delete\_project            |
-| s           | \<c-s\>     | search\_in\_project\_files |
-| r           | \<c-r\>     | recent\_project\_files     |
-| w           | \<c-w\>     | change\_working\_directory |
+| enter       | enter       | change\_working\_directory |
 
 ## API
 
