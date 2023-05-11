@@ -1,3 +1,10 @@
+### Quick view for this fork
+
+- remove all keymaps but `d`, `<c-d>`.
+- add `options.on_changed` callback, you can use your session manager to restore sessions on this callback.
+
+---
+
 # 🗃️ project.nvim
 
 **project.nvim** is an all in one neovim plugin written in lua that provides
