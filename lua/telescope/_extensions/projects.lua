@@ -48,10 +48,11 @@ local function create_finder()
     results = results,
     entry_maker = function(entry)
       local name = vim.fn.fnamemodify(entry, ":t")
+      local value = vim.fn.fnamemodify(entry, ":~")
       return {
         display = make_display,
         name = name,
-        value = entry,
+        value = value,
         ordinal = name .. " " .. entry,
       }
     end,
