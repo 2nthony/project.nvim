@@ -4,6 +4,7 @@
 - delete project without confirm prompt.
 - change `enter` to change working directory.
 - add `options.on_changed` callback, you can use your session manager to restore sessions on this callback.
+- only relative path in telescope prompt.
 - no other options breaks.
 
 ---
